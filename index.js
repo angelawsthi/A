@@ -1,6 +1,3 @@
-function showMessage() {
-    alert("GO STUDY RIGHT NOW!");
-}
 const {
   Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
   HeadingLevel, AlignmentType, LevelFormat, BorderStyle, WidthType,
