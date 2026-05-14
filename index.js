@@ -1,3 +1,6 @@
+function showMessage() {
+    alert("GO STUDY TORTS RIGHT NOW 😭");
+}
 const {
   Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
   HeadingLevel, AlignmentType, LevelFormat, BorderStyle, WidthType,
