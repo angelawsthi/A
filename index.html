@@ -1,42 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Study Constitutional Law</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body{
-      background: #ffd6eb;
-      font-family: Arial;
-      padding: 30px;
-    }
+<title>Constitutional Law Notes</title>
 
-    h1{
-      color: #ff1493;
-    }
+<style>
 
-    button{
-      background: hotpink;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-  </style>
+body{
+    margin:0;
+    font-family: Georgia;
+    background:#ffe6f2;
+    color:#1A2C5B;
+}
+
+header{
+    background:#ffb6d9;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+h1{
+    margin:0;
+    font-size:48px;
+}
+
+.subtitle{
+    font-size:20px;
+    margin-top:10px;
+}
+
+.container{
+    padding:30px;
+}
+
+.section{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.section h2{
+    color:#d63384;
+}
+
+.toggle-btn{
+    background:#ff69b4;
+    color:white;
+    border:none;
+    padding:12px 18px;
+    border-radius:12px;
+    cursor:pointer;
+    margin-top:10px;
+    font-size:16px;
+}
+
+.notes{
+    display:none;
+    margin-top:20px;
+    line-height:1.8;
+}
+
+.case{
+    background:#fff0f7;
+    padding:15px;
+    border-left:5px solid hotpink;
+    margin-top:15px;
+    border-radius:10px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+th{
+    background:#ff69b4;
+    color:white;
+    padding:12px;
+}
+
+td{
+    border:1px solid #ffc0cb;
+    padding:12px;
+    background:white;
+}
+
+.search-box{
+    width:100%;
+    padding:15px;
+    border-radius:12px;
+    border:none;
+    margin-bottom:25px;
+    font-size:16px;
+}
+
+</style>
 </head>
 
 <body>
 
-  <h1>Hello Angel ✨</h1>
+<header>
+    <h1>Constitutional Law ✨</h1>
+    <div class="subtitle">
+        Executive Power • Judiciary • Case Laws
+    </div>
+</header>
 
-  <button onclick="showMessage()">
-    Click Me
-  </button>
+<div class="container">
 
-  <script src="website.js"></script>
+<input
+type="text"
+class="search-box"
+placeholder="Search Articles, Cases, Topics..."
+onkeyup="searchNotes()"
+id="searchInput"
+>
+
+<div class="section">
+
+<h2>
+B. Executive Power: President & Governor
+</h2>
+
+<button class="toggle-btn" onclick="toggleNotes('exec')">
+Show Notes
+</button>
+
+<div class="notes" id="exec">
+
+<h3>Article 53</h3>
+
+<p>
+Executive power of the Union is vested in the President.
+</p>
+
+<div class="case">
+<b>Ram Jawaya Kapoor v State of Punjab</b><br>
+President is only a constitutional head.
+Real executive powers vest in Cabinet.
+</div>
+
+<div class="case">
+<b>Samsher Singh v State of Punjab</b><br>
+President acts on aid and advice of Council of Ministers.
+</div>
+
+<table>
+
+<tr>
+<th>Power</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>Legislative</td>
+<td>Summons Parliament, assent to bills, ordinances.</td>
+</tr>
+
+<tr>
+<td>Judicial</td>
+<td>Pardon powers under Article 72.</td>
+</tr>
+
+<tr>
+<td>Emergency</td>
+<td>National Emergency under Article 352.</td>
+</tr>
+
+</table>
+
+</div>
+</div>
+
+<div class="section">
+
+<h2>
+Judiciary & Supreme Court Jurisdiction
+</h2>
+
+<button class="toggle-btn" onclick="toggleNotes('judiciary')">
+Show Notes
+</button>
+
+<div class="notes" id="judiciary">
+
+<h3>Article 32</h3>
+
+<p>
+Right to Constitutional Remedies.
+Called the heart and soul of Constitution by Ambedkar.
+</p>
+
+<div class="case">
+<b>Kaushal Kishore v State of UP</b><br>
+Some fundamental rights may apply horizontally.
+</div>
+
+<div class="case">
+<b>Kunhayammed v State of Kerala</b><br>
+SLP under Article 136 is discretionary.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function toggleNotes(id){
+
+    let notes = document.getElementById(id);
+
+    if(notes.style.display === "block"){
+        notes.style.display = "none";
+    }
+
+    else{
+        notes.style.display = "block";
+    }
+}
+
+function searchNotes(){
+
+    let input =
+    document.getElementById("searchInput")
+    .value
+    .toLowerCase();
+
+    let sections =
+    document.querySelectorAll(".section");
+
+    sections.forEach(section => {
+
+        let text =
+        section.innerText.toLowerCase();
+
+        if(text.includes(input)){
+            section.style.display = "block";
+        }
+
+        else{
+            section.style.display = "none";
+        }
+
+    });
+
+}
+
+</script>
 
 </body>
 </html>
