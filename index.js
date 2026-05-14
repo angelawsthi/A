@@ -1,5 +1,5 @@
 function showMessage() {
-    alert("GO STUDY TORTS RIGHT NOW 😭");
+    alert("GO STUDY RIGHT NOW!");
 }
 const {
   Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
